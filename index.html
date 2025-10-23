@@ -1,0 +1,249 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartFinanceTools — Free Online Finance Calculators</title>
+  <meta name="description" content="Free, fast and accurate finance calculators: EMI, SIP, GST, Age and more. Mobile-friendly and SEO-ready." />
+  <meta name="keywords" content="EMI calculator, SIP calculator, GST calculator, finance tools, loan calculator, free calculator" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"SmartFinanceTools",
+    "url":"https://yourdomain.example/"
+  }
+  </script>
+  <style>
+    :root{--bg:#f7f9fc;--card:#ffffff;--muted:#67727a;--accent:#0B6E4F}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    body{background:var(--bg);color:#102027;line-height:1.4}
+    header{background:linear-gradient(90deg,#ffffff 0%, #f0fbf6 100%);padding:18px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,0,0,0.04)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#0b6e4f,#0fb57f);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav a{margin-left:12px;color:var(--muted);text-decoration:none;font-weight:600}
+    .container{max-width:980px;margin:24px auto;padding:0 16px}
+    .hero{display:flex;gap:20px;align-items:center;justify-content:space-between}
+    .hero .lead{max-width:640px}
+    h1{margin:0;font-size:28px}
+    p.lead-text{color:var(--muted);margin:8px 0 0}
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 20px rgba(15,24,31,0.04);border:1px solid rgba(12,18,20,0.03)}
+    .card h3{margin:0;font-size:16px}
+    .small{font-size:13px;color:var(--muted);margin-top:6px}
+    footer{max-width:980px;margin:28px auto;padding:16px;color:var(--muted);font-size:13px}
+    /* form styling */
+    form{display:grid;gap:10px}
+    label{font-size:13px;color:#16313a}
+    input[type='number'], input[type='text'], select{padding:10px;border-radius:8px;border:1px solid #e6eef0;font-size:14px}
+    button{background:var(--accent);color:#fff;padding:10px 12px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .muted{color:var(--muted);font-size:13px}
+    .result{margin-top:8px;padding:10px;border-radius:8px;background:#f3fff7;border:1px solid rgba(11,110,79,0.08);font-weight:700}
+    @media (max-width:640px){h1{font-size:22px}.hero{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">SF</div>
+      <div>
+        <div style="font-weight:800">SmartFinanceTools</div>
+        <div style="font-size:12px;color:var(--muted)">Free & instant finance calculators</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#tools">Tools</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>  <main class="container">
+    <section class="hero">
+      <div class="lead">
+        <h1>Free online finance calculators — fast and accurate</h1>
+        <p class="lead-text">EMI, SIP, GST, Age and more. Mobile-first design, easy to use, and ready to share.</p>
+      </div>
+      <div style="min-width:200px;text-align:right">
+        <div class="small">Start with a tool</div>
+        <a href="#emi" style="display:inline-block;margin-top:8px;padding:10px 14px;border-radius:10px;background:#eefbf5;color:var(--accent);font-weight:700;text-decoration:none">Open EMI Calculator</a>
+      </div>
+    </section><section id="tools" style="margin-top:24px">
+  <div class="tools-grid">
+    <div class="card">
+      <h3>EMI Calculator</h3>
+      <div class="small">Calculate monthly loan payments</div>
+      <div style="margin-top:10px"><a href="#emi">Open →</a></div>
+    </div>
+    <div class="card">
+      <h3>SIP Calculator</h3>
+      <div class="small">Estimate returns on monthly SIP investments</div>
+      <div style="margin-top:10px"><a href="#sip">Open →</a></div>
+    </div>
+    <div class="card">
+      <h3>GST Calculator</h3>
+      <div class="small">Add or remove GST from prices quickly</div>
+      <div style="margin-top:10px"><a href="#gst">Open →</a></div>
+    </div>
+    <div class="card">
+      <h3>Age Calculator</h3>
+      <div class="small">Find exact age (years, months, days)</div>
+      <div style="margin-top:10px"><a href="#age">Open →</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="emi" class="card" style="margin-top:22px">
+  <h2>EMI Calculator</h2>
+  <p class="muted">Enter loan amount, annual interest rate, and tenure.</p>
+  <form id="emiForm" onsubmit="event.preventDefault(); calculateEMI()">
+    <label>Loan amount (₹)</label>
+    <input id="loanAmount" type="number" min="0" step="0.01" value="500000" />
+
+    <label>Annual interest rate (%)</label>
+    <input id="annualRate" type="number" min="0" step="0.01" value="7.5" />
+
+    <label>Tenure (years)</label>
+    <input id="tenureYears" type="number" min="0" step="1" value="5" />
+
+    <button type="submit">Calculate EMI</button>
+  </form>
+  <div id="emiResult" class="result" style="display:none"></div>
+</section>
+
+<section id="sip" class="card" style="margin-top:22px">
+  <h2>SIP Calculator</h2>
+  <p class="muted">Estimate future value of monthly investments</p>
+  <form id="sipForm" onsubmit="event.preventDefault(); calculateSIP()">
+    <label>Monthly SIP amount (₹)</label>
+    <input id="sipAmount" type="number" min="0" step="0.01" value="5000" />
+    <label>Expected annual return (%)</label>
+    <input id="sipRate" type="number" min="0" step="0.01" value="12" />
+    <label>Tenure (years)</label>
+    <input id="sipYears" type="number" min="0" step="1" value="10" />
+    <button type="submit">Calculate SIP</button>
+  </form>
+  <div id="sipResult" class="result" style="display:none"></div>
+</section>
+
+<section id="gst" class="card" style="margin-top:22px">
+  <h2>GST Calculator</h2>
+  <p class="muted">Add or remove GST from a price</p>
+  <form id="gstForm" onsubmit="event.preventDefault(); calculateGST()">
+    <label>Price (₹)</label>
+    <input id="gstPrice" type="number" min="0" step="0.01" value="1000" />
+    <label>GST rate (%)</label>
+    <select id="gstRate">
+      <option value="5">5%</option>
+      <option value="12">12%</option>
+      <option value="18" selected>18%</option>
+      <option value="28">28%</option>
+    </select>
+    <div style="display:flex;gap:8px">
+      <button onclick="event.preventDefault(); calculateGST('add')">Add GST</button>
+      <button onclick="event.preventDefault(); calculateGST('remove')">Remove GST</button>
+    </div>
+  </form>
+  <div id="gstResult" class="result" style="display:none"></div>
+</section>
+
+<section id="age" class="card" style="margin-top:22px">
+  <h2>Age Calculator</h2>
+  <p class="muted">Find exact age between two dates</p>
+  <form id="ageForm" onsubmit="event.preventDefault(); calculateAge()">
+    <label>Birth date</label>
+    <input id="birthDate" type="date" value="2000-01-01" />
+    <label>Compare to (leave empty for today)</label>
+    <input id="compareDate" type="date" />
+    <button type="submit">Calculate Age</button>
+  </form>
+  <div id="ageResult" class="result" style="display:none"></div>
+</section>
+
+<section id="blog" style="margin-top:22px">
+  <div class="card">
+    <h3>Blog idea starter</h3>
+    <p class="muted">Add guides like "How EMI is calculated" or "SIP vs Lumpsum" to attract long-term SEO traffic.</p>
+  </div>
+</section>
+
+  </main>  <footer>
+    © SmartFinanceTools — Built with ❤️. Deploy on GitHub Pages for free.
+  </footer>  <script>
+    function formatINR(x){return '₹'+Number(x).toLocaleString('en-IN',{maximumFractionDigits:2})}
+
+    function calculateEMI(){
+      const P = parseFloat(document.getElementById('loanAmount').value) || 0
+      const r_annual = parseFloat(document.getElementById('annualRate').value) || 0
+      const years = parseInt(document.getElementById('tenureYears').value) || 0
+      const n = years * 12
+      const r = r_annual/100/12
+      let emi = 0
+      if(r === 0){ emi = P / n }
+      else { emi = (P * r * Math.pow(1+r,n)) / (Math.pow(1+r,n)-1) }
+      const total = emi * n
+      const interest = total - P
+      const out = `Monthly EMI: ${formatINR(emi)} \nTotal Payment: ${formatINR(total)} \nTotal Interest: ${formatINR(interest)}`
+      const div = document.getElementById('emiResult')
+      div.style.display='block'
+      div.textContent = out
+    }
+
+    function calculateSIP(){
+      const monthly = parseFloat(document.getElementById('sipAmount').value) || 0
+      const annual = parseFloat(document.getElementById('sipRate').value) || 0
+      const years = parseInt(document.getElementById('sipYears').value) || 0
+      const n = years * 12
+      const r = annual/100/12
+      // future value of series: FV = P * [ ( (1+r)^n - 1 ) / r ] * (1+r)
+      let fv = 0
+      if(r === 0){ fv = monthly * n }
+      else { fv = monthly * ( (Math.pow(1+r,n)-1)/r ) * (1+r) }
+      const invested = monthly * n
+      const gain = fv - invested
+      const div = document.getElementById('sipResult')
+      div.style.display='block'
+      div.textContent = `Future Value: ${formatINR(fv)} \nTotal Invested: ${formatINR(invested)} \nEstimated Gain: ${formatINR(gain)}`
+    }
+
+    function calculateGST(mode='add'){
+      const price = parseFloat(document.getElementById('gstPrice').value) || 0
+      const rate = parseFloat(document.getElementById('gstRate').value) || 0
+      const div = document.getElementById('gstResult')
+      if(mode === 'add'){
+        const tax = price * rate/100
+        const total = price + tax
+        div.style.display='block'
+        div.textContent = `GST (${rate}%): ${formatINR(tax)} \nTotal price: ${formatINR(total)}`
+      } else {
+        const base = price / (1 + rate/100)
+        const tax = price - base
+        div.style.display='block'
+        div.textContent = `Base price: ${formatINR(base)} \nGST (${rate}%): ${formatINR(tax)}`
+      }
+    }
+
+    function calculateAge(){
+      const birth = document.getElementById('birthDate').value
+      const compare = document.getElementById('compareDate').value || new Date().toISOString().slice(0,10)
+      if(!birth){ alert('Please enter birth date'); return }
+      const b = new Date(birth)
+      const c = new Date(compare)
+      if(c < b){ alert('Compare date must be after birth date'); return }
+      let years = c.getFullYear() - b.getFullYear()
+      let months = c.getMonth() - b.getMonth()
+      let days = c.getDate() - b.getDate()
+      if(days < 0){ months -=1; const prevMonth = new Date(c.getFullYear(), c.getMonth(), 0); days += prevMonth.getDate() }
+      if(months < 0){ years -=1; months += 12 }
+      const div = document.getElementById('ageResult')
+      div.style.display='block'
+      div.textContent = `${years} years, ${months} months, ${days} days`
+    }
+
+    // small UX: calculate on load with default values
+    document.addEventListener('DOMContentLoaded', ()=>{
+      calculateEMI(); calculateSIP();
+    })
+  </script></body>
+</html>
