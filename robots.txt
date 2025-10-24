@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pritpipalde030-yech.github.io/SmartFinanceTools/sitemap.xml
