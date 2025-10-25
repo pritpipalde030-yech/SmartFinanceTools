@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartFinanceTools Blog - Tips & Updates</title>
+  <meta name="description" content="Read finance tips, money management advice, and SmartFinanceTools updates to help you grow financially smart.">
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    article {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    article h2 {
+      color: #1e293b;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e2e8f0;
+      color: #475569;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SmartFinanceTools Blog</h1>
+    <p>Smart money, smarter you 💡</p>
+  </header>
+
+  <main>
+    <article>
+      <h2>📊 How to Track Daily Expenses Effectively</h2>
+      <p>Start by recording every transaction — even small ones. Use tools like SmartFinanceTools to categorize your spending and set goals. You’ll be surprised how much clarity this brings to your finances!</p>
+    </article>
+
+    <article>
+      <h2>💰 Why Budgeting Is the First Step to Financial Freedom</h2>
+      <p>Budgeting helps you see where your money goes and where you can save. Build small, realistic budgets that you can actually follow, not strict ones that break in a week.</p>
+    </article>
+
+    <article>
+      <h2>📈 Update: New Tools Coming Soon!</h2>
+      <p>We’re working on new finance calculators to help you plan savings, investments, and loans better. Stay tuned for updates!</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 SmartFinanceTools | <a href="index.html">Back to Home</a></p>
+  </footer>
+</body>
+</html>
